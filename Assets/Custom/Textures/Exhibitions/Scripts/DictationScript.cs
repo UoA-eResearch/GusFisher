@@ -51,4 +51,10 @@ public class DictationScript : MonoBehaviour
 
 		m_DictationRecognizer.Start();
 	}
+
+	private void OnDestroy()
+	{
+		m_DictationRecognizer.Stop();
+		m_DictationRecognizer.Dispose();
+	}
 }
