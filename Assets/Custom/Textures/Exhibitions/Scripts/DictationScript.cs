@@ -30,6 +30,7 @@ public class DictationScript : MonoBehaviour
 	{
 		initSpeech();
 		m_DictationRecognizer = new DictationRecognizer();
+		Debug.Log("Dictation engine ready");
 
 		m_DictationRecognizer.DictationResult += (text, confidence) =>
 		{
@@ -60,7 +61,6 @@ public class DictationScript : MonoBehaviour
 	private void OnDestroy()
 	{
 		destroySpeech();
-		m_DictationRecognizer.Stop();
 		m_DictationRecognizer.Dispose();
 	}
 }
