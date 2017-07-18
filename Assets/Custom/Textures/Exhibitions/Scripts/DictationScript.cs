@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.Windows.Speech;
-using HoloToolkit.Unity;
 using System.Collections;
+using System.Runtime.InteropServices;
 
 public class DictationScript : MonoBehaviour
 {
-	private TextToSpeechManager tts;
+	[DllImport("WindowsVoice")]
+	public static extern void initSpeech();
+	[DllImport("WindowsVoice")]
+	public static extern void destroySpeech();
+	[DllImport("WindowsVoice")]
+	public static extern void addToSpeechQueue(string s);
 
 	private DictationRecognizer m_DictationRecognizer;
 	private string aliceUrl = "http://ml.cer.auckland.ac.nz/alice/";
@@ -18,13 +23,13 @@ public class DictationScript : MonoBehaviour
 		yield return www;
 		var result = www.text;
 		Debug.Log(result);
-		tts.SpeakText(result);
+		addToSpeechQueue(result);
 	}
 
 	void Start()
 	{
+		initSpeech();
 		m_DictationRecognizer = new DictationRecognizer();
-		tts = gameObject.GetComponent<TextToSpeechManager>();
 
 		m_DictationRecognizer.DictationResult += (text, confidence) =>
 		{
@@ -54,6 +59,7 @@ public class DictationScript : MonoBehaviour
 
 	private void OnDestroy()
 	{
+		destroySpeech();
 		m_DictationRecognizer.Stop();
 		m_DictationRecognizer.Dispose();
 	}
