@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,13 +19,10 @@ public class AGI_Force : MonoBehaviour {
 
 	void FixedUpdate(){
 		distance = Vector3.Distance(rb.transform.position, centerPosition);
-		Debug.Log ("Distance: " + distance + "Radius: " + radius);
 		if (distance > radius) {
 			direction = -(rb.transform.position - centerPosition);
-			Debug.Log ("Transformed Direction: " + direction);
 		} else if (distance < radius) {
 			direction = new Vector3 (Random.Range (-1.0f, 1.0f),Random.Range (-1.0f, 1.0f), Random.Range (-1.0f, 1.0f));
-			Debug.Log ("Random Direction: " + direction);
 		}
 		rb.AddForce (direction * force, ForceMode.Acceleration);
 	
