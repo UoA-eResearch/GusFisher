@@ -19,7 +19,5 @@ public class FollowHead : MonoBehaviour {
 			transform.rotation = Quaternion.Euler(0, head.transform.rotation.eulerAngles.y, 0);
 		}
 		transform.position = head.transform.position;
-		playermodel.transform.localPosition = new Vector3(0, -head.transform.position.y, -0.21f);
-		playermodel.transform.localScale = new Vector3(1, head.transform.position.y /2, 1);
 	}
 }
