@@ -17,7 +17,6 @@ public class CloseHand : MonoBehaviour {
 	void Update () {
 		var controller = this.GetComponentInParent<Hand>().controller;
 		Vector2 triggerPosition = controller.GetAxis(EVRButtonId.k_EButton_SteamVR_Trigger);
-		Debug.Log(triggerPosition);
 		anim.Play("Take 001", -1, triggerPosition.x);
 	}
 }
