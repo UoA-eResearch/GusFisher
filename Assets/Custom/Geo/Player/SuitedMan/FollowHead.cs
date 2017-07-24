@@ -14,7 +14,9 @@ public class FollowHead : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (head.transform.rotation.eulerAngles.x < 45)
+		float angle = head.transform.rotation.eulerAngles.x;
+		angle = (angle > 180) ? angle - 360 : angle;
+		if (angle < 45)
 		{
 			transform.rotation = Quaternion.Euler(0, head.transform.rotation.eulerAngles.y, 0);
 		}
