@@ -12,7 +12,9 @@ public class DictationScript : MonoBehaviour
 	[DllImport("WindowsVoice")]
 	public static extern void addToSpeechQueue(string s);
 
-	private DictationRecognizer m_DictationRecognizer;
+	public AudioSource audioSource;
+
+	private static DictationRecognizer m_DictationRecognizer;
 	private string aliceUrl = "http://ml.cer.auckland.ac.nz/alice/";
 
 	private IEnumerator AskAlice(string text)
@@ -47,15 +49,27 @@ public class DictationScript : MonoBehaviour
 		{
 			if (completionCause != DictationCompletionCause.Complete)
 				Debug.LogErrorFormat("Dictation completed unsuccessfully: {0}.", completionCause);
-			m_DictationRecognizer.Start();
 		};
 
 		m_DictationRecognizer.DictationError += (error, hresult) =>
 		{
 			Debug.LogErrorFormat("Dictation error: {0}; HResult = {1}.", error, hresult);
 		};
+		
+	}
 
-		m_DictationRecognizer.Start();
+	public void OnButtonPush(GameObject go)
+	{
+		Debug.Log("player hit " + go.name);
+		if (go.name == "spacebar")
+		{
+			m_DictationRecognizer.Start();
+			audioSource.mute = true;
+		} else if (go.name == "esc")
+		{
+			m_DictationRecognizer.Stop();
+			audioSource.mute = false;
+		}
 	}
 
 	private void OnDestroy()
