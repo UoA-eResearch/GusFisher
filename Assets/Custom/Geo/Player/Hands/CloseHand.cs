@@ -16,7 +16,10 @@ public class CloseHand : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		var controller = this.GetComponentInParent<Hand>().controller;
-		Vector2 triggerPosition = controller.GetAxis(EVRButtonId.k_EButton_SteamVR_Trigger);
-		anim.Play("Take 001", -1, triggerPosition.x);
+		if (controller != null)
+		{
+			Vector2 triggerPosition = controller.GetAxis(EVRButtonId.k_EButton_SteamVR_Trigger);
+			anim.Play("Take 001", -1, triggerPosition.x);
+		}
 	}
 }
