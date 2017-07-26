@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class QRDetector : MonoBehaviour {
 
@@ -8,12 +9,13 @@ public class QRDetector : MonoBehaviour {
 	public Camera backCam;
 	public TextMesh helpText;
 	public GameObject scansAnim;
+	public Pickupable pickup;
 
 	private bool scanning = true;
 	
 	void Update ()
 	{
-		if (scanning)
+		if (scanning && pickup.attached)
 		{
 			var planes = GeometryUtility.CalculateFrustumPlanes(backCam);
 			if (GeometryUtility.TestPlanesAABB(planes, QRCode.bounds))
