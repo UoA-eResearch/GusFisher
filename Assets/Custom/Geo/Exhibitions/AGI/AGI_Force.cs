@@ -7,7 +7,7 @@ public class AGI_Force : MonoBehaviour {
 	private float force = 0.05f;
 	private Rigidbody rb;
 	private float radius = 1.15f;
-	private Vector3 centerPosition = new Vector3(-18.63854f, 3.287673f, -0.9795871f);
+	private Vector3 centerPosition = new Vector3(-18.43f, 3.81f, -5.46f);
 	private Vector3 direction;
 	private float distance;
 
