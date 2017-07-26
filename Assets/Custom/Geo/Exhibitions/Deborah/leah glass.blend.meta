@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 21c8e58897484674688b662d51fdd996
-timeCreated: 1501035405
+guid: 0731cef8f48b5244895a2993d8f10b93
+timeCreated: 1501036366
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -10,6 +10,8 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: EyeGlass
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0
@@ -79,7 +81,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
