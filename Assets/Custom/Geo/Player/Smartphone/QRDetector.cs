@@ -7,8 +7,9 @@ public class QRDetector : MonoBehaviour {
 	public Collider QRCode;
 	public Camera backCam;
 	public TextMesh helpText;
+	public GameObject scansAnim;
 
-	private bool scanning = false;
+	private bool scanning = true;
 	
 	void Update ()
 	{
@@ -19,6 +20,7 @@ public class QRDetector : MonoBehaviour {
 			{
 				Debug.Log("QR code detected");
 				helpText.text = "QR code\ndetected";
+				scanning = false;
 				StartCoroutine(PlaySequence());
 			}
 		}
@@ -28,5 +30,7 @@ public class QRDetector : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(5);
 		Debug.Log("show now");
+		helpText.gameObject.SetActive(false);
+		scansAnim.SetActive(true);
 	}
 }
