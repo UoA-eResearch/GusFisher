@@ -2,7 +2,7 @@
 A Unity/Vive recreation of the Gus Fisher gallery  
 
 ALTER is a group exhibition that provokes questions about our
-entagled relations between human and non-human, virtual and real.
+entangled relations between human and non-human, virtual and real.
 
 This exhibition includes works by international contemporary artists who
 critically address the posthuman. Referencing biomimetic self,
