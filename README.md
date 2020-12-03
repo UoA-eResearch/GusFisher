@@ -17,6 +17,3 @@ boundaries of the body. The artworks in this show oscillate between
 character and computational representation while engaging in a dialogue
 that challenges popular notions of self identity.
 
-
-The videos are not committed to this Git repository to stay within GitHub file size limits. These can be downloaded from https://seafile.cer.auckland.ac.nz/d/723b952059/ and should be placed in Assets\Custom\Textures\Exhibitions\Videos  
-Additionally, Assets/Custom/Geo/Exhibitions/Logo/BabyX_Blurb.obj is not committed due to being oversize, this can be downloaded from the same seafile folder.  

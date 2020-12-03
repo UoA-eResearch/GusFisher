@@ -32,9 +32,3 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-
-# Video Files
-*.mp4
-*.mov
-
-Assets/Custom/Geo/Exhibitions/Logo/BabyX_Blurb.obj
